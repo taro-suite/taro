@@ -59,6 +59,10 @@ def store_job(job_info):
     _instance().store_job(job_info)
 
 
+def remove_job(id_):
+    _instance().remove_job(id_= id_)
+
+
 def add_disabled_jobs(disabled_jobs):
     return _instance().add_disabled_jobs(disabled_jobs)
 

@@ -105,6 +105,11 @@ class SQLite:
         )
         self._conn.commit()
 
+    def remove_job(self,  id_):
+        self._conn.execute("DELETE FROM history WHERE job_id = (?) or instance_id = (?)", (id_,id_,))
+        self._conn.commit()
+
+
     def add_disabled_jobs(self, disabled_jobs):
         added = []
         for j in disabled_jobs:

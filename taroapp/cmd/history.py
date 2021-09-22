@@ -6,6 +6,9 @@ from taroapp.view import instance as view_inst
 
 
 def run(args):
+    if args.remove:
+        persistence.remove_job(id_=args.id)
+        return
     jobs = persistence.read_jobs(id_=args.id, sort=SortCriteria[args.sort.upper()], asc=args.asc,
                                  limit=args.lines or -1, last=args.last)
 

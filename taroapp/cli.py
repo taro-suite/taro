@@ -132,6 +132,7 @@ def _init_history_parser(common, subparsers):
     hist_parser.add_argument('-s', '--sort', type=str, choices=[s.name.lower() for s in SortCriteria],
                              default=SortCriteria.CREATED.name.lower(), help='Sorting criteria')
     hist_parser.add_argument('-P', '--no-pager', action='store_true', help='Do not use pager for output')
+    hist_parser.add_argument('-r', '--remove', action='store_true', help='Remove job from history. Be aware of duplicate job ID\'s')
 
 
 def _init_release_parser(common, subparsers):
